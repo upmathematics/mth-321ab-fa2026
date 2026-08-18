@@ -1,0 +1,98 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 18} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Examine Nullclines of 1st-order System of ODEs
+
+### 1. Converting a linear 2nd-Order ODE into a Linear System of 1st-Order ODEs
+
+This problem involves using Newton's Law of motion to formulate a set of rate equations that can describe, explain, and predict the motion of a mass on a spring.
+
+```{r echo=FALSE, fig.align='center', out.width = '50%'}
+knitr::include_graphics("hsm-diagram.pdf")
+```
+
+The ODE that models the horizontal motion of the mass is governed by the 2nd-order linear homogeneous equation. Specifically with mass $1$, friction coefficient $3$, spring constant $2$, and assuming no external forces, the ODE is given by $$x''+3x'+2x=0$$ where $x$ is the displacement of the mass at time $t$.
+
+We can convert the 2nd-order ODE into a linear system of 1st-order ODEs which we can analyze. The following tasks leads you to convert the given 2nd-order ODE into a system of 1st-order ODEs.
+    
+| Task | Show work here |
+|----|---------|
+| Set $\displaystyle x' = v$ (velocity) and write the term for $\displaystyle v'$ (acceleration). |  |
+|----|---------|
+| Substitute the established terms into the ODE. |  |
+|----|---------|
+| Isolate $v'$. |  |
+|----|---------|
+| Write $x'$ and $v'$ together by arranging them side by side as a system of equations, so it’s clear how they relate to each other. |  |
+
+The result is called a *linear system of first-order ODEs* because each equation involves only 1st derivatives of the dependent variables, and those variables can appear in any of the equations, possibly influencing one another.
+
+\newpage
+
+### 2. Solving for the Nullclines of 1st-order System of ODEs
+
+The *nullcline* was defined as an *isocline* where the slope (1st-derivative) is zero. In other words, it is a line that describes the critical points of an ODE.
+
+Consider the same linear 2nd-order homogeneous ODE in Problem (1), $$x''+3x'+2x=0$$ where it models the motion of a horizontal spring-mass system.
+
+Setting $x' = v$ and $x''=v'$ transforms the linear 2nd-order homogeneous ODE into a linear system of 1st-order ODEs,
+$$
+\begin{aligned}
+x' & = v \\
+v' & = -2x - 3v
+\end{aligned}.
+$$
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] The \textit{$x$-nullcline} is when the derivative of the 1st equation is zero. Set $x' = 0$. Then, solve for $v$. Describe this line on an $x$-$v$ axis.
+    \vfill
+    \item[b.] The \textit{$v$-nullcline} is when the derivative of the 2nd equation is zero. Set $v' = 0$. Then solve for $v$. Describe this line on an $x$-$v$ axis.
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[c.] Each nullcline describes the behavior of the system at its critical points.
+      \begin{itemize}
+        \item[i.] $x$-nullcline: Use your results in Part (a) to interpret what this nullcline means in context.
+        \vfill
+        \item[ii.] $v$-nullcline: Use your results in Part (b) to interpret what this nullcline means in context.
+        \vfill
+      \end{itemize}
+    \item[d.] If the $x$-nullcline and $v$-nullcline intersect, what does this point of intersection represent in the context of a horizontal spring–mass system?
+    \vfill
+  \end{itemize}
+\end{minipage}

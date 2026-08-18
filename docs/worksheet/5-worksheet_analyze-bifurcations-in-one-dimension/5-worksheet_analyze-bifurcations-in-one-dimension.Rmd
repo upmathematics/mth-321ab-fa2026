@@ -1,0 +1,162 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 5} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.25in,right=0.25in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Analyze Bifurcations in One Dimension
+
+### 1. Fish Harvesting
+
+An engineer at a fish hatchery has been using the logistic growth model for predicting the number of fish that a hatchery can expect to find in their pond.
+
+Let $y(t)$ denote the fish population (in thousands) at time $t$, with initial population $y(0) = y_0$. The population dynamics are modeled by the logistic growth ODE, $$y' = 5y\left(1 - \frac{y}{10} \right) - b,$$ where the term $5y$ represents natural growth, $\left(1 - \frac{y}{10} \right)$ accounts for the environmental resistance with carrying capacity $10$ (thousand), and the term $-b$ is a parameter with $b \ge 0$ is the fishing rate (thousand fish per unit time).
+
+The goal here is to study how the solutions of the ODE change as the fishing rate $b$ changes, and then interpret what this means in context.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+\begin{itemize}
+  \item[a.] Use the blank axis shown below to create the phase diagram for $b=0$ (no fishing). Then, label the stability of equilibriums.
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=4,fig.height=3}
+ode_logistic <- function(t,y,parameters){
+  with(as.list(c(parameters)),{
+    dy <- 5*y - (5*y^2)/(10) - b
+    return(list(dy))
+  })
+}
+
+y_vec <- seq(-2,12,length.out=30)
+dydt_vec <- ode_logistic(0,y_vec,c(b=0))
+ode_logistic_df <- data.frame(x = y_vec, y = dydt_vec[[1]])
+
+ggplot(ode_logistic_df, aes(x = x, y = y)) +
+  #geom_line(linewidth=1) +
+  geom_blank() +
+  geom_vline(xintercept=0, color="black") +
+  geom_hline(yintercept=0, color="black") +
+  xlab(latex2exp::TeX("$y$")) +
+  ylab(latex2exp::TeX("$f$")) +
+  ggtitle(latex2exp::TeX("$b = 0$")) + 
+  theme_minimal()
+```
+\end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+\begin{itemize}
+  \item[b.] Define $f(y)$ and let $b=0$. Then, determine the equilibrium solutions.
+  \vfill
+  \item[c.] Describe the behavior of solutions and what this means in context.
+  \vfill
+\end{itemize}
+\end{minipage}
+
+\newpage
+
+### 2. Bifurcation
+
+Continued from Problem (1). Now, we analyze the solutions as we vary the parameter $b$ of the given ODE.
+
+* A *bifurcation* is a change in number of equilibriums or change in equilibrium stability as a parameter changes.
+* A *bifurcation point* is the value of the parameter on which the change occurs.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+\begin{itemize}
+  \item[a.] Create a complete phase diagram of the given ODE for each designated $b$ value.
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=4,fig.height=3}
+y_vec <- seq(-2,12,length.out=30)
+dydt_vec <- ode_logistic(0,y_vec,c(b=0))
+ode_logistic_df <- data.frame(x = y_vec, y = dydt_vec[[1]])
+
+ggplot(ode_logistic_df, aes(x = x, y = y)) +
+  #geom_line(linewidth=1) +
+  geom_blank() +
+  geom_vline(xintercept=0, color="black") +
+  geom_hline(yintercept=0, color="black") +
+  xlab(latex2exp::TeX("$y$")) +
+  ylab(latex2exp::TeX("$f$")) +
+  ggtitle(latex2exp::TeX("$b = 3.125$")) + 
+  theme_minimal()
+```
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=4,fig.height=3}
+y_vec <- seq(-2,12,length.out=30)
+dydt_vec <- ode_logistic(0,y_vec,c(b=0))
+ode_logistic_df <- data.frame(x = y_vec, y = dydt_vec[[1]])
+
+ggplot(ode_logistic_df, aes(x = x, y = y)) +
+  #geom_line(linewidth=1) +
+  geom_blank() +
+  geom_vline(xintercept=0, color="black") +
+  geom_hline(yintercept=0, color="black") +
+  xlab(latex2exp::TeX("$y$")) +
+  ylab(latex2exp::TeX("$f$")) +
+  ggtitle(latex2exp::TeX("$b = 6.25$")) + 
+  theme_minimal()
+```
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=4,fig.height=3}
+y_vec <- seq(-2,12,length.out=30)
+dydt_vec <- ode_logistic(0,y_vec,c(b=0))
+ode_logistic_df <- data.frame(x = y_vec, y = dydt_vec[[1]])
+
+ggplot(ode_logistic_df, aes(x = x, y = y)) +
+  #geom_line(linewidth=1) +
+  geom_blank() +
+  geom_vline(xintercept=0, color="black") +
+  geom_hline(yintercept=0, color="black") +
+  xlab(latex2exp::TeX("$y$")) +
+  ylab(latex2exp::TeX("$f$")) +
+  ggtitle(latex2exp::TeX("$b = 12.5$")) + 
+  theme_minimal()
+```
+\end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+\begin{itemize}
+  \item[b.] Define $f(y)$ and assume $b \ge 0$. Then, determine the equilibrium solutions. These equilibrium solutions should have the $b$ term. Describe your observations as $b$ increases.
+  \vfill
+  \item[c.] Determine the bifurcation point. Then, describe what happens to the equilibriums at and beyond this point.
+  \vfill
+  \item[d.] In fish harvesting, the engineer recommends keeping the fishing rate below $12.5$ (thousand fish per unit time). Is this recommendation reasonable, and what population levels $y$ must be sustained to prevent extinction? Explain your reasoning.
+  \vfill
+\end{itemize}
+\end{minipage}
+
+<!-- \newpage
+
+## **References**
+
+::: {#refs}
+:::
+
+<br> -->

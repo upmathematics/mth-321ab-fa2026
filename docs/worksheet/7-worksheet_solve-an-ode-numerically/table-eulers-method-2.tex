@@ -1,0 +1,16 @@
+\documentclass[convert]{standalone}
+\renewcommand{\arraystretch}{2}
+\usepackage[table,xcdraw]{xcolor}
+\begin{document}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	$n$ & $t_n$ & $y_n$ & $f(t_n,y_n)$ & $y_{n+1}=y_n + hf$ \\ \hline
+	0   & 0     & 1     & 0.9          & 1 + 1(0.9) = 1.9   \\ \hline
+	1   & 1     & 1.9   & 1.539        & 1.9+1(1.539)=3.439 \\ \hline
+	2   & 2     & 3.439 & 2.2563       &                    \\ \hline
+	3   & 3     &       &              &                    \\ \hline
+	4   & 4     &       &              &                    \\ \hline
+	5   & 5     &       &              &                    \\ \hline
+	6   & 6     &       &              &                    \\ \hline
+\end{tabular}
+\end{document}

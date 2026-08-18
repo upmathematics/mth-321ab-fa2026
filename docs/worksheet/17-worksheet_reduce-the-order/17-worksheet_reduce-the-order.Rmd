@@ -1,0 +1,87 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 17} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Reduce the Order
+
+### 1. Order Reduction of Linear 2nd-Order ODEs
+
+Consider the linear 2nd-order ODE with non-constant coefficients: $$t^2 y'' + 2t y' - 2y = 0$$ with a solution $\displaystyle y_1 = t$.
+
+The following tasks outlines the method of *reduction of order* to solve for the general solution of the given ODE.
+
+| Task | Show work here |
+|-----|---------|
+| Assume that the other solution is of the form $\displaystyle y_2 = t v$ where $v$ is some function of $t$. Determine $y_2'$ and $y_2''$. Then substitute these into the given ODE. Simplify. |  |
+|-----|---------|
+| Use the variable transformation $\displaystyle w=v'$ to reduce the ODE into 1st-order. |  |
+|-----|---------|
+| Determine the solution $w$ of the 1st-order ODE. |  |
+|----|---------|
+| Since $w=v'$, solve for $\displaystyle v = \int w \ dt$. You can choose any constants to clear out fractions. If a constant is by itself choose $0$. |  |
+|-----|---------|
+| Write $y_2 = y_1 v$. |  |
+|-----|---------|
+| Write the general solution $y = c_1 y_1 + c_2 y_2$. |  |
+
+This method is useful when one solution is already known and you need to find a second solution.
+
+\newpage
+
+### 2. Using a Different Trial Solution
+
+Consider the general form of a linear 2nd-order ODE with non-constant coefficients: $t^2 y'' + aty' + by = 0$ where $a$ and $b$ are constants. Let $\displaystyle y = t^r$ be the trial solution. This will result into the characteristic equation $$r^2 + (a-1)r + b = 0.$$
+
+The roots of the characteristic equation, determines the form of the general solution:
+
+  * If $r$ yields *two distinct real roots* $r_1$ and $r_2$, the general solution is $$y = c_1 t^{r_1} + c_2 t^{r_2}.$$
+  * If $r$ yields a *repeated real root*, the general solution is $$y = \left( c_1 + c_2 \ln{(t)} \right)t^r.$$
+  * If $r$ yields *complex conjugate roots* $r = \alpha \pm \beta i$, the general solution is $$y = t^{\alpha} \left( c_1 \cos{(\beta \ln{(t)})} + c_2 \sin{(\beta \ln{(t)})} \right).$$
+
+Consider the same linear 2nd-order ODE with non-constant coefficients from Problem (1): $$t^2 y'' + 2t y' - 2y = 0.$$
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] Let $\displaystyle y = t^r$ be the trial solution where $r$ is a constant. Use the verification process to determine the characteristic equation.
+    \vfill
+    \item[b.] Solve for the roots of the characteristic equation determined in Part (a). Then, write the general solution. Compare this solution with the solution determined in Problem (1).
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[c.] Now, consider this different ODE of the same form $$t^2 y'' - t y' + 3y = 0.$$ State the characteristic equation, find its roots, and write the general solution.
+    \vfill
+  \end{itemize}
+\end{minipage}

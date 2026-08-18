@@ -1,0 +1,114 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 26} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.25in,right=0.25in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Determine the Undetermined for Linear Systems
+
+### 1. A Constant Vector for the Non-Homogeneous Term
+
+The method of *Undetermined Coefficients* applied to systems of ODEs closely mirrors the approach used when solving second-order differential equations. The core strategy and logical framework remain essentially the same.
+
+You still write a trial solution about the form of the particular solution based on the structure of the non-homogeneous term, and then determine the unknown coefficients, which are now vectors for systems of ODEs.
+
+Consider this *non-homogeneous linear system of 1st-order ODEs with constant coefficients*:
+$$
+\begin{bmatrix}
+x' \\ y'
+\end{bmatrix} = 
+\begin{bmatrix}
+1 & 2 \\
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x \\ y
+\end{bmatrix} + 
+\begin{bmatrix}
+-1 \\ 1
+\end{bmatrix}.
+$$
+Note the non-homogeneous term $\begin{bmatrix} -1 \\ 1\end{bmatrix}$, a constant vector, added to the system.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] If the non-homogeneous term is a constant vector, then what is an appropriate trial solution for $\begin{bmatrix}x_p \\ y_p\end{bmatrix}$?
+    \vfill
+    \item[b.] What is the important step before you solve for the particular solution after you write an initial trial solution?
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[c.] Solve for the particular solution by following the standard process for the method of undetermined coefficients. Since this is a system, you may need to use the row reduction algorithm to solve for the coefficients.
+  \end{itemize}
+\end{minipage}
+
+\newpage
+
+### 2. A Non-Constant Vector for the Non-Homogeneous Term
+
+Consider this *non-homogeneous linear system of 1st-order ODEs with constant coefficients*:
+$$
+\begin{bmatrix}
+x' \\ y'
+\end{bmatrix} = 
+\begin{bmatrix}
+1 & 2 \\
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x \\ y
+\end{bmatrix} + 
+\begin{bmatrix}
+t \\ -t
+\end{bmatrix}.
+$$
+Note the non-homogeneous term $\begin{bmatrix} t \\ -t\end{bmatrix}$, a vector function of $t$, added to the system. Because of the superposition principle, the full solution is of the form $\begin{bmatrix}x \\ y\end{bmatrix} = \begin{bmatrix}x_h \\ y_h\end{bmatrix} + \begin{bmatrix}x_p \\ y_p\end{bmatrix}$ where $\begin{bmatrix}x_h \\ y_h\end{bmatrix}$ is the homogeneous solution and $\begin{bmatrix}x_p \\ y_p\end{bmatrix}$ is the particular solution.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] Before you solve for the particular solution, solve for the homogeneous solution $\begin{bmatrix}x_h \\ y_h\end{bmatrix}$ using the method of eigenvalues and eigenvectors.
+    \vspace{275px}
+    \item[b.] Based on the table of trial solutions for the method of undetermined coefficients, what is an appropriate trial solution for $\begin{bmatrix}x_p \\ y_p\end{bmatrix}$? Then, decide whether multiplying it by $t$ is appropriate.
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[c.] Solve for the particular solution by following the standard process for the method of undetermined coefficients. Since this is a system, you may need to use the row reduction algorithm to solve for the coefficients.
+    \vspace{260px}
+    \item[e.] Write the general solution.
+    \vfill
+  \end{itemize}
+\end{minipage}

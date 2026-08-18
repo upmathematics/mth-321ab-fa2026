@@ -1,0 +1,87 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 14} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Solve for the Homogeneous Solution
+
+### 1. The Characteristic Equation
+
+Consider the *linear homogeneous 2nd-order* ODE written in the form $$y'' + py' + qy = 0,$$ where $p$ and $q$ are constants. A solution method begins with an *ansatz* (a trial solution) of the form $$y = e^{rt}$$ where $r$ is an unknown constant to be determined.
+
+Consider the *linear homogeneous 2nd-order ODE with constant coefficients*, $$y'' + 10y' + 9y = 0.$$ The following tasks uses the *ansatz* method to solve for the general solution.
+
+| Task | Show work here |
+|----|---------|
+| Let $\displaystyle y = e^{rt}$ be the *ansatz*. Then, determine $y'$ and $y''$. |  |
+|----|---------|
+| Show that the ansatz yields the quadratic equation $\displaystyle r^2 + 10r + 9 = 0$ from the ODE. |  |
+|----|---------|
+| Solve the quadratic equation to find values of $r$. |  |
+|----|---------|
+| State the independent solutions for the ODE, one for each value of $r$. |  |
+|----|---------|
+| Use the *superposition principle* to write the general solution. |  |
+
+The choice of $\displaystyle y = e^{rt}$ as the ansatz works because the exponential function has the special property that its derivatives are proportional to itself. The equation $\displaystyle r^2 + pr + q = 0$ is called the *characteristic equation*.
+
+\newpage
+
+### 2. Roots of the Characteristic Equation
+
+Using the ansatz $\displaystyle y = e^{rt}$ for the ODE of the form $y'' + py' + qy = 0$ creates the characteristic equation, $$r^2 + pr + q = 0.$$
+
+The roots of the characteristic equation, determines the form of the general solution:
+
+* If $r$ yields *two distinct real roots*, $r_1$ and $r_2$, the general solution is $$y(t) = c_1 e^{r_1 t} + c_2 e^{r_2 t}.$$
+* If $r$ yields a *repeated real root*, the general solution is $$y(t) = c_1 e^{r t} + c_2 te^{r t}.$$
+* If $r$ yields *complex conjugate roots*, $r = \alpha \pm \beta i$, the general solution is $$y(t) = e^{\alpha t}\left(c_1 \cos{(\beta t)} + c_2 \sin{(\beta t)} \right).$$
+
+For each ODE, state the characteristic equation, find its roots, and write the general solution.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] $\displaystyle y'' + 3y' + 2y = 0$
+    \vfill
+    \item[b.] $\displaystyle y'' - 2y' + y = 0$
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[c.] $\displaystyle y'' + 2y' + 2y = 0$
+    \vfill
+    \item[d.] $\displaystyle y'' + 2y = 0$
+    \vfill
+  \end{itemize}
+\end{minipage}

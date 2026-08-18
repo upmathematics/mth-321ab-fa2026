@@ -1,0 +1,189 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Exam 2} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../apa.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\begin{center}
+\Large{\textbf{EXAM 2}}
+\end{center}
+
+\vfill
+
+\begin{center}
+\Large{\textbf{STEP 1: SCHEDULE YOUR SESSION}} \\
+\large{\textbf{Hyperlink: \href{https://outlook.office.com/bookwithme/user/563068e7b8f84361b7e7eaf55bc932d8@up.edu/meetingtype/2TxF8nQX3kqzzkoLSdtUog2?bookingcode=98e727b1-6d2b-4a96-900f-69f2953da39a&anonymous&ismsaljsauthenabled&ep=mlink}{Ordinary Differential Equation Exam}}}
+\end{center}
+
+\vfill
+
+\begin{center}
+\Large{\textbf{STEP 2: WORK ON YOUR EXAM}} \\
+\large{\textbf{THE EXAM HAS TWO SETS OF PROBLEMS, X and Y}} \\
+\large{\textbf{CHOOSE ONLY ONE SET AND FOLLOW THE PROMPTS}}
+\end{center}
+
+\vfill
+
+\begin{center}
+\Large{\textbf{STEP 3: SUBMIT AND SHOW UP}} \\
+\large{\textbf{MAKE SURE THAT YOU FOLLOWED THE GUIDELINES}}
+\end{center}
+
+\vfill
+
+# Guidelines^[Please review the course Syllabus for the complete Exam guidelines and assessment process.]
+
+## Written Part
+
+* Your work must be submitted before your scheduled session, or handed in at the start of the session.
+* Your scheduled session will not proceed if your written work has not been submitted or is incomplete.
+
+## Oral Part
+
+* You must sign-up for a 15-minute time slot on exam days at least 24 hours in advance.
+* If you had discussed an AES accommodation, you may schedule two consecutive sessions.
+* You must show up to your scheduled oral part of the exam in-person and on time.
+* A no-show or being late results in an automatic “M” (missed exam).
+
+## Submission
+
+* Submit your work in Moodle before your scheduled session.
+* If necessary, you may hand in a physical copy at the start of the session.
+
+## Collaboration and Academic Integrity Policy
+
+* You may collaborate with your peers, but the work you submit must reflect your own.
+* You may use all resources available to you, that includes your notes, books, and online resources.
+* Be prepared to defend all aspects of your work.
+
+## Extra Credit Opportunity
+
+* Optional problems will count as an extra credit added to your homework total.
+
+\vfill
+
+\newpage
+
+# X. Excessive Vibrations on a Robotic Vehicle
+
+**Description:**
+
+An autonomous delivery robot navigates uneven terrain and experiences vibrations due to external forces from the ground. The robot's suspension system on its wheels is modeled as a spring-mass-damper system. The vertical motion $y$ at time $t$ of the wheels is modeled by a linear 2nd-order ODE: $$y'' + 2cy' + ky = f(t),$$ where $c$ is the damping coefficient and $k$ is the spring constant. The external forcing term representing road-induced vibrations is $$f(t) = \sin{(\beta \ t)}$$ where $\beta$ is the forcing frequency.
+
+**Written Part:**
+
+1. Show --by way of an *Ansatz*-- that the characteristic equation is $\displaystyle r^2 + 2cr + k = 0$.
+2. Show that the roots of the characteristic equation are $$r_1 = -c + \sqrt{c^2 - k} \quad \text{and} \quad r_2 = -c - \sqrt{c^2 - k}.$$
+3. Determine the homogeneous solution $y_h$ for each of the following $c$ and $k$ parameter pairs.
+```{=latex}
+\begin{center}
+\begin{tabular}{ccc}
+a. $\displaystyle c=0 \text{ and } k=2$ & \hspace{40px} 
+b. $\displaystyle c=0 \text{ and } k=4$ & \hspace{40px}
+c. $\displaystyle c=1 \text{ and } k=2$
+\end{tabular}
+\end{center}
+```
+4. Use either the method of *Undetermined Coefficients* or *Variation of Parameters* to show that the particular solution $y_p$ corresponding to each pair of $c$ and $k$ parameters matches one of the given solutions.
+```{=latex}
+\begin{center}
+\begin{tabular}{ccc}
+A. $\displaystyle \frac{\sin{(\beta \ t)}}{4-\beta^2}$ & \hspace{30px} 
+B. $\displaystyle \frac{2 \sin{(\beta \ t)} - 2 \beta \cos{(\beta \ t)} - \beta^2 \sin{(\beta \ t)}}{\beta^4 + 4}$ & \hspace{30px}
+C. $\displaystyle \frac{\sin{(\beta  \ t)}}{2 - \beta^2}$
+\end{tabular}
+\end{center}
+```
+5. For every pair of $c$ and $k$ values matched with each value of $\beta$, find both the general and specific solutions with initial conditions $y(0) = 1$ and $y'(0) = 0$.
+```{=latex}
+\begin{center}
+\begin{tabular}{cc}
+i. $\displaystyle \begin{aligned} \beta=2 \end{aligned}$ & \hspace{30px} 
+ii. $\displaystyle \begin{aligned} \beta=\sqrt{2} \end{aligned}$
+\end{tabular}
+\end{center}
+```
+6. Use a graphing technology to draw clear and well represented graphs of the specific solutions determined in Problem (5).
+
+**Oral Part:**
+
+7. Explain the key steps of solving the homogeneous solution, and discuss why we need to determine this before solving the particular solution.
+8. Explain the key steps of the chosen method for determining the particular solution, and provide a justification on why you can use such method.
+9. Order the parameter sets --from lowest to highest-- according to the maximum amplitude of the specific solutions. Then, interpret each solution in context of the robotic vehicle.
+
+**Optional:**
+
+10. Let $c = 2$, $k = 4$, and $f(t) = te^{-2t}$. Solve for the one independent homogeneous solution, find --by way of order reduction-- another independent solution. Then, determine the particular solution.
+
+\newpage
+
+# Y. Resonance Effects in Radio Receivers
+
+**Description:**
+
+In a radio receiver, resonance is the principle that enables the circuit to selectively isolate and amplify a specific radio frequency signal from a wide range of signals. The circuit, with its current $I$ at time $t$, is described by a linear 2nd-order ODE: $$I'' + 2R I' + (1/C) I = F(t)$$ where $R$ is the resistance coefficient and $C$ is the capacitance constant. The external forcing term $$F(t) = \cos{(\alpha \ t)}$$ is the rate of change of an electrical source with forcing frequency $\alpha$.
+
+**Written Part:**
+
+1. Show --by way of an *Ansatz*-- that the characteristic equation is $\displaystyle r^2 + 2Rr+ (1/C) = 0.$
+2. Show that the roots of the characteristic equation are $$r_1 = -R + \sqrt{R^2 - (1/C)} \quad \text{and} \quad \displaystyle r_2 = -R - \sqrt{R^2 - (1/C)}.$$
+3. Determine the homogeneous solution $I_h$ for each of the following $R$ and $C$ parameter pairs.
+```{=latex}
+\begin{center}
+\begin{tabular}{ccc}
+a. $\displaystyle R=0 \text{ and } C=2$ & \hspace{30px} 
+b. $\displaystyle R=0 \text{ and } C=1$ & \hspace{30px}
+c. $\displaystyle R=1 \text{ and } C=1/2$
+\end{tabular}
+\end{center}
+```
+4. Use either the method of *Undetermined Coefficients* or *Variation of Parameters* to show that the particular solution $I_p$ corresponding to each pair of $R$ and $C$ parameters matches one of the given solutions.
+```{=latex}
+\begin{center}
+\begin{tabular}{ccc}
+A. $\displaystyle \frac{2\alpha \sin{(\alpha \ t)} + 2 \cos{(\alpha \ t)} - \alpha^2 \cos{(\alpha \ t)}}{\alpha^4 + 4}$ & \hspace{30px} 
+B. $\displaystyle \frac{2 \cos{(\alpha \ t)}}{1 - 2\alpha^2}$ & \hspace{30px}
+C. $\displaystyle \frac{\cos{(\alpha \ t)}}{1 - \alpha^2}$
+\end{tabular}
+\end{center}
+```
+5. For every pair of $R$ and $kC$ values matched with each value of $\alpha$, find both the general and specific solutions with initial conditions $I(0) = 1$ and $I'(0) = 0$.
+```{=latex}
+\begin{center}
+\begin{tabular}{cc}
+i. $\displaystyle \begin{aligned} \alpha=\frac{1}{2} \end{aligned}$ & \hspace{30px} 
+ii. $\displaystyle \begin{aligned} \alpha=\frac{1}{\sqrt{2}} \end{aligned}$
+\end{tabular}
+\end{center}
+```
+6. Use a graphing technology to draw clear and well represented graphs of the specific solutions determined in Problem (4).
+
+**Oral Part:**
+
+7. Explain the key steps of solving the homogeneous solution, and discuss why we need to determine this before solving the particular solution.
+8. Explain the key steps of the chosen method for determining the particular solution, and provide a justification on why you can use such method.
+9. Order the parameter sets --from lowest to highest-- according to the maximum amplitude of the specific solutions. Then, interpret each solution in context of the radio receiver.
+
+**Optional:**
+
+10. Let $R = 1$, $C = 1$, and $f(t) = te^{-t}$. Solve for the one independent homogeneous solution, find --by way of order reduction-- another independent solution. Then, determine the particular solution.

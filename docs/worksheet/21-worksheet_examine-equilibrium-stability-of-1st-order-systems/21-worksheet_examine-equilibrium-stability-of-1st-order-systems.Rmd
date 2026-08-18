@@ -1,0 +1,129 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 21} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.25in,right=0.25in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Examine Equilibrium Stability of 1st-Order Systems
+
+### 1. The Straight-Line Solutions
+
+Consider the *linear homogeneous system of 1st-order ODEs with constant coefficients*: $\displaystyle \begin{aligned} x' = & v \\ v' = & -3x-4v \end{aligned}$.
+
+The solutions $x$ and $v$ are unknown but we can determine the solutions that appear to be a straight line on the phase plane, which are called the *straight-line* solutions.
+
+a. The following tasks leads you to find the general solution using the *straight-line* solutions.
+
+| Task | Show work here |
+|---|---------|
+| Let $\displaystyle \frac{v'}{x'} = \frac{v}{x}$. \newline Then, solve for $v$. |  |
+|---|---------|
+| State $v_1$ and $v_2$. |  |
+|---|---------|
+| Solve $x'_1 = v_1$. |  |
+|---|---------|
+| Solve $x'_2 = v_2$. |  |
+|---|---------|
+| Write the general solution $x = c_1x_1 + c_2x_2$ |  |
+
+The terms for $v_1$ and $v_2$ represent isoclines, special curves along which the direction vectors are parallel to the line itself.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[b.] Determine $x'$ and show that this is equal to $v = c_1 v_1 + c_2 v_2$
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[c.] Show that as $t \to \infty$, the general solution determined in Parts (a) and (b) goes to the equilibrium $(x,v) = (0,0)$.
+    \vfill
+  \end{itemize}
+\end{minipage}
+
+\newpage
+
+### 2. The Straight-Line Solutions on the Phase Plane
+
+Consider the same linear system from Problem (1): $\displaystyle \begin{aligned} x' = & v \\ v' = & -3x-4v \end{aligned}$.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] Given the two straight-line solutions from Problem (1a), draw these lines on the phase plane with the appropriate labels. Then, draw the slope vectors on the straight-line solutions.
+```{r fig.width=4,fig.height=4,fig.align='center',out.width="100%"}
+ggplot() +
+  xlim(-1.5, 1.5) +
+  ylim(-1.5, 1.5) +
+  geom_hline(yintercept=0,color='black', linetype="dashed") +
+  geom_vline(xintercept=0,color='black', linetype="dashed") +
+  geom_hline(yintercept=-1.5,color='darkgray') +
+  geom_vline(xintercept=-1.5,color='darkgray') +
+  labs(x=TeX('$x$'),y=TeX('$v$')) +
+  theme_minimal()
+```
+    \item[b.] Consider the initial condition $(x,v)=(1,-1)$. Draw this point on the same phase plane. Then, draw the solution curve starting from this point and by following the direction vectors. Then, describe what this solution looks like on the phase plane in Part (a).
+    \vfill
+    \item[c.] Consider another initial condition $(x,v)=(1,1)$. Describe the trajectory of this solution on the phase plane. How does it behave over time, and where does it tend to go?
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[e.] Use your Part (a) results, with initial condition $(x,v)=(1,-1)$, to draw an approximate solution curve in the $t$-$x$ plane.
+```{r fig.width=4,fig.height=2.25,fig.align='center',out.width="100%"}
+ggplot() +
+  xlim(0, 8) +
+  ylim(-2, 2) +
+  geom_hline(yintercept=0,color='black', linetype="dashed") +
+  geom_vline(xintercept=0,color='darkgray') +
+  labs(x=TeX('$t$'),y=TeX('$x$')) +
+  theme_minimal() + 
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+    \item[f.] Use your Part (a) results, with initial condition $(x,v)=(1,-1)$, to draw an approximate solution curve in the $t$-$v$ plane.
+```{r fig.width=4,fig.height=2.25,fig.align='center',out.width="100%"}
+ggplot() +
+  xlim(0, 8) +
+  ylim(-2, 2) +
+  geom_hline(yintercept=0,color='black', linetype="dashed") +
+  geom_vline(xintercept=0,color='darkgray') +
+  labs(x=TeX('$t$'),y=TeX('$v$')) +
+  theme_minimal() + 
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+    \item[g.] Consider any initial condition. Observe the signs of the exponents in the two independent solutions from Problem (1). How do these signs influence whether solutions grow, decay, or remain constant over time? Based on this, what can you conclude about the stability of the equilibrium point?
+    \vfill
+  \end{itemize}
+\end{minipage}

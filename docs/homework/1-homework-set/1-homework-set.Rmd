@@ -1,0 +1,195 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Homework Set 1} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+  \usepackage{enumitem}
+  \usepackage{tasks}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../apa.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Instructions:** Homework is graded primarily on correctness and completion.
+
+* Write your solutions on separate sheets of paper with your name written on each problem.
+* Include all key steps and explanations that justify your answers, unless it says otherwise.
+* Submit your written work as a `.pdf` file.
+* Attach all supporting files as a `.zip` file if applicable.
+
+\noindent\rule{\textwidth}{1pt}
+
+## Homework Set 1
+
+### 1. 
+
+Consider the rate of change equation $$\displaystyle y'=\frac{y}{2}(2+y)(y-8),$$ which has been created to provide predictions about the future population of rabbits over time.
+
+\begin{tasks}
+  \task For what values of $y$ is $y(t)$ increasing?
+  \task For what values of $y$ is $y(t)$ decreasing?
+  \task For what values of $y$ is $\displaystyle y'$ neither positive nor negative? What does this imply about the solution function $y(t)$?
+\end{tasks}
+
+### 2. 
+
+Valeria created the following graph to help her analyze solutions to the ODE, $$\displaystyle y' = 2y \left(1-\frac{y}{10} \right).$$ What is this a graph of (i.e., what are the axes for this graph)? What information about solutions can you infer from this graph?
+
+```{r echo=FALSE, out.width="80%", fig.align='center', fig.width=8, fig.height=3}
+# define the function f(y)
+f_y <- function(y) {
+  return(2*y*(1-(y/10)))
+}
+
+# generate f(y) values
+y_vec <- seq(-1,11,length.out=30)
+df <- data.frame(x=y_vec,y=f_y(y_vec))
+
+# plot f(y)
+ggplot(df, aes(x=x, y=y)) + 
+  geom_line(linewidth=1) +
+  geom_hline(yintercept=0) +
+  geom_vline(xintercept=0) +
+  theme_minimal() + 
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+```
+
+### 3. 
+
+For the ODE $\displaystyle y' = 1-y^2$,
+
+\begin{tasks}
+  \task Sketch a phase diagram by hand and explain why you can draw such visualization for the given ODE. 
+  \task Sketch a slope field by hand and explain any shortcuts or patterns you used to  make the task easier.
+  \task Sketch several specific solutions (including the equilibriums) on the slope field.
+\end{tasks}
+
+### 4.
+
+Suppose two students are memorizing the elements on a list according to the rate of change equation $$\displaystyle L'=\frac{1}{2}(1-L),$$ where $L$ represents the fraction of the list that is memorized at time $t$.
+
+\begin{tasks}
+  \task If one of the students knows one-third of the list at time $t = 0$ and the other student knows none of the list, which student is learning most rapidly at this instant? Why?
+  \task What does the rate of change equation predict for someone who begins with the list completely memorized? Explain.
+  \task Suppose now that the list so long that no one can read it in a lifetime, like the decimal representation for $\pi$. In reality, no one can memorize all the digits to $\pi$, but what does the rate of change equation predict will happen for a person who starts out not knowing any of the digits? That is, according to the rate of change equation, if $L = 0$ at time $t = 0$, is there ever a value of $t$ for which $L = 1$? Explain.
+\end{tasks}
+
+### 5. 
+
+A group of scientists at the Federal Aviation Association has come up with the following two different rate of change equations to predict the height of a helicopter as it nears the ground: $$h'=-h \qquad \text{ and } \qquad h'=-h^{\frac{1}{3}}.$$ For both rate of change equations $h$ is in feet and $t$ is in minutes. The scientists, of course, want their models to predict that a helicopter actually lands, but do either or both of the proposed models predict this? 
+
+\begin{tasks}
+  \task Below shows the corresponding slope fields for each ODE. Sketch in qualitatively correct graphs of the solution functions with initial conditions $h(0) = 0$ and $h(0) = 2$. 
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=10,fig.height=4}
+ode <- function(t,y,parameters){
+  with(as.list(c(parameters)),{
+    dy <- a*y^b
+    return(list(dy))
+  })
+}
+
+p1 <- SlopeField(ode,params=c(a=-1,b=1),
+                 tlim=c(0,2),ylim=c(0,3),res=10,
+                 scale=0.50,radius=0.10,unit=FALSE,
+                 col="black",xlab="t",ylab="h",title=latex2exp::TeX("$h' = -h$"))
+
+p2 <- SlopeField(ode,params=c(a=-1,b=1/3),
+                 tlim=c(0,2),ylim=c(0,3),res=10,
+                 scale=0.50,radius=0.10,unit=FALSE,
+                 col="black",xlab="t",ylab="h",title=latex2exp::TeX("$h' = -h^{\\frac{1}{3}}$"))
+
+grid.arrange(p1,p2,ncol=2)
+```
+  \task For each differential equation, use the uniqueness theorem to show whether the graphs of each ODE will ever touch or cross the equilibrium. Interpret the results in context.
+\end{tasks}
+
+### 6. 
+
+Consider the ODE with initial condition, $$y'+ty=e^{-\frac{1}{2}t^2}, \hspace{20px} y(0)=1.$$ Show that $\displaystyle y(t)=te^{-\frac{1}{2}t^2}+e^{-\frac{1}{2}t^2}$ is a solution and explain why this is a specific solution.
+
+### 7. 
+
+For each ODE, 
+
+* determine all equilibrium solutions if any, and
+* use the existence and uniqueness theorem to determine whether or not graphs of solution functions will ever touch any and all equilibrium solutions.
+
+\begin{tasks}(4)
+  \task $\displaystyle y'=0.5(1-y)$
+  \task $\displaystyle y'=0.3y\left(1-\frac{y}{10}\right)$
+  \task $\displaystyle y'=-t+1$
+  \task $\displaystyle y'=y^{\frac{1}{2}}$
+\end{tasks}
+
+### 8. 
+
+The following questions relates to the general definition of ODEs and their solutions. Answer each question with at least two to three sentences.
+
+\begin{tasks}
+  \task In algebra, the goal of solving an equation such as $x^2 + 4x =2$ is to find the values of $x$ that make a true statement. In differential equations, what is the goal of solving an equation such as $\displaystyle x'+4x=2$? Explain your reasoning.
+  \task The letter $y$ appears in two places in the differential equation $\displaystyle y' = 0.3y.$ Is it appropriate to think of both occurrences of $y$ as function of $t$? Explain your reasoning.
+  \task What are the key differences between general and specific solutions of an ODE? Explain your reasoning.
+  \task An equilibrium solution is a constant solution where the rate of change is zero in the long term. Is it true that equilibrium solutions are nullclines but not all nullclines are equilibriums? Explain your reasoning.
+\end{tasks}
+
+### 9.
+
+Construct one ODE for each of the following classifications. For each case, briefly explain why the equation satisfies the specified criteria or justify why such an equation cannot exist.
+
+\begin{tasks}
+  \task 1st-order, homogeneous, non-autonomous, linear
+  \task 1st-order, non-homogeneous, autonomous, non-linear
+  \task 1st-order, non-homogeneous, non-autonomous, linear
+  \task 2nd-order, homogeneous, non-autonomous, linear
+  \task 2nd-order, non-homogeneous, autonomous, non-linear
+  \task 2nd-order, non-homogeneous, non-autonomous, linear
+\end{tasks}
+
+\newpage
+
+### 10. Challenge Problem
+
+Consider the 1st-order ODE,
+
+$$y' = n(1-y) - (1-t^{n-1})$$
+
+where $n$ is a positive integer, $n \ge 0$.
+
+\begin{tasks}
+  \task Classify the given differential equation in terms of order, autonomy, homogeniety, and linearity for cases when $n=0$, $n=1$, and $n > 1$.
+  \task Determine the values of $n$ where there are equilibrium solutions and values of $n$ where there are none.
+  \task Create a function for the isoclines and nullclines for each case of $n$, and draw these functions on your slope fields.
+  \task Draw slope fields for cases when $n=0$, $n=1$, and $n > 1$ (for even and odd numbers, give one example each), and then draw at least four qualitatively different solution curves (including equilibriums if any).
+\end{tasks}
+
+<!-- \newpage
+
+## **References**
+
+::: {#refs}
+:::
+
+<br> -->

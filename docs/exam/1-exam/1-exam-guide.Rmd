@@ -1,0 +1,62 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Exam 1 Guide} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../apa.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exam 1 Guide
+
+See the Topics Schedule and Assessment sections in the Syllabus for exam schedules and procedures.
+
+### Topics
+
+#### 1. Basics
+
+* **Types of differential equations.** Ordinary and partial
+*	**ODE classification.** Order, autonomy, homogeneity, and linearity
+*	**1st-order ODE forms.** Separable and 1st-order linear forms
+*	**Types of solutions.** Exact, general, specific, and approximate
+*	**Verifying solutions.** 1st-order ODEs
+        
+#### 2. Modelling Physical Systems
+
+* **Interpreting 1st-order ODEs.** Making meaningful 1st-order ODEs
+* **Population dynamics.** Exponential and logistic growth/decay
+* **Newton's Law of Cooling.** Temperature difference of object and environment
+* **Mixing.** Flow change with constant and non-constant volumes
+    
+#### 3. Qualitative Analysis of 1st-Order ODEs
+
+* **Existence and uniqueness.** Initial value problems and equilibriums
+* **Equilibrium solutions and stability.** Stable (attractor), unstable (repellor), semi-stable
+* **Slope fields.** Slope vectors representing the rate of change on an $t$-$y$ plane
+* **Phase diagrams.** A $y$-$y'$ plane representing the solution behaviors
+
+#### 4. Solving 1st-Order ODEs
+
+*	**Analytical.** Separation of variables and integrating factors
+* **Graphical.** Solving for the nullclines and isoclines
+* **Numerical.** Euler's method
+
+#### 5. Bifurcations Analysis of 1st-Order ODEs
+
+* **One dimensional bifurcations.** Qualitative changes of solutions as a parameter changes.

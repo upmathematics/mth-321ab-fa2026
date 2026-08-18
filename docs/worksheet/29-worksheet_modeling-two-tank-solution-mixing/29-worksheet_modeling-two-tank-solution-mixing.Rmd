@@ -1,0 +1,123 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 29} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Modeling Two-Tank Solution Mixing
+
+### 1. Mixing in Two-Tanks
+
+\begin{minipage}[t!]{0.49\textwidth}
+Consider two tanks named $X$ and $Y$. Tanks $X$ and $Y$ contain $100$ liters and $300$ liters of salt solutions, respectively. Salt solutions are simultaneously added to both tanks from external sources, pumped from each tank to the other, and drained from both tanks. The diagram shown illustrates the in and out flow rates of each tank. Let $Q_x$ and $Q_y$ be the amount of salt (in kilograms) at time $t$ in tanks $X$ and $Y$ respectively. Assume that both tanks are well mixed.
+\end{minipage}
+\begin{minipage}[t!]{0.49\textwidth}
+```{r echo=FALSE, fig.align='center', out.width = '80%'}
+knitr::include_graphics("mixing-in-two-tanksXY-diagram.pdf")
+```
+\end{minipage}
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] The rate of change in the amount of salt in each tank can be described as
+    $$
+    \begin{aligned}
+    Q_x' & = (\text{rate in})_x - (\text{rate out})_x \\
+    Q_y' & = (\text{rate in})_y - (\text{rate out})_y \\
+    \end{aligned}
+    $$
+    where "rate in" and "rate out" denote the rates (kg/min) at which salt enters and leaves a tank
+    \begin{itemize}
+      \item[i.] Use the illustration to determine the "rate in" and "rate out" terms of $Q_x'$.
+      \vfill
+      \item[ii.] Use the illustration to determine the "rate in" and "rate out" terms of $Q_y'$.
+      \vfill
+    \end{itemize}
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[b.] Write the system of 1st-order ODEs determined in Part (b) as matrix-vector form.
+    \vfill
+    \item[c.] Classify the system of 1st-order ODEs determined in Part (b) in terms of linearity, homogeneity, and autonomy.
+    \vfill
+  \end{itemize}
+\end{minipage}
+
+\newpage
+
+### 2. Predicting the Long-Term Behavior of the System
+
+Consider the same two-tank system from Problem 1. The rate of change in the amount of salt in each tank is modeled using a *non-homogeneous linear system of 1st-order ODEs*:
+$$
+\begin{bmatrix}
+Q'_x \\ Q'_y
+\end{bmatrix} = 
+\begin{bmatrix}
+-\frac{2}{25} & \frac{1}{100} \\[7pt]
+\frac{1}{50}  & -\frac{1}{50}
+\end{bmatrix}
+\begin{bmatrix}
+Q_x \\ Q_y
+\end{bmatrix} + 
+\begin{bmatrix}
+5 \\ 8
+\end{bmatrix}
+$$
+where $Q_x$ and $Q_y$ are the amounts of salt (in kilograms) at time $t$ in tanks $X$ and $Y$ respectively.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] Determine the equilibrium solution. Then, interpret it in context.
+    \vfill
+    \item[b.] The eigenvalues and eigenvectors of the coefficient matrix are
+    $$
+    \begin{aligned}
+    \lambda_1 \approx -0.083 \quad & \text{with} \quad \vec{v}_1 \approx \begin{bmatrix} -3.158 \\ 1 \end{bmatrix} \quad \text{and} \\
+    \lambda_2 \approx -0.017 \quad & \text{with} \quad \vec{v}_2 \approx \begin{bmatrix} 0.158 \\ 1 \end{bmatrix}. \\
+    \end{aligned}
+    $$
+    Write, the homogeneous solution.
+    \vfill
+    \item[c.] Using only the eigenvalues shown in Part (c), describe the solution behaviors around the equilibrium. Then, interpret it in context.
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[d.] Show that the equilibrium solution is equal to the particular solution using either the method of Undetermined Coefficients or Variation of Parameters.
+    \vfill
+    \item[e.] Write the general solution. Then, determine the specific solution given the initial condition $\left(Q_x,Q_y\right) = (200,0)$.
+    \vfill
+  \end{itemize}
+\end{minipage}

@@ -1,0 +1,151 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Exam 1} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../apa.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\begin{center}
+\Large{\textbf{EXAM 1}}
+\end{center}
+
+\vfill
+
+\begin{center}
+\Large{\textbf{STEP 1: SCHEDULE YOUR SESSION}} \\
+\large{\textbf{Hyperlink: \href{https://outlook.office.com/bookwithme/user/563068e7b8f84361b7e7eaf55bc932d8@up.edu/meetingtype/2TxF8nQX3kqzzkoLSdtUog2?bookingcode=4123002a-3f6a-4bb1-94b6-713efe8e47e9&anonymous&ismsaljsauthenabled&ep=mlink}{Ordinary Differential Equation Exam}}}
+\end{center}
+
+\vfill
+
+\begin{center}
+\Large{\textbf{STEP 2: WORK ON YOUR EXAM}} \\
+\large{\textbf{THE EXAM HAS TWO SETS OF PROBLEMS, X and Y}} \\
+\large{\textbf{CHOOSE ONLY ONE SET AND FOLLOW THE PROMPTS}}
+\end{center}
+
+\vfill
+
+\begin{center}
+\Large{\textbf{STEP 3: SUBMIT AND SHOW UP}} \\
+\large{\textbf{MAKE SURE THAT YOU FOLLOWED THE GUIDELINES}}
+\end{center}
+
+\vfill
+
+# Guidelines^[Please review the course Syllabus for the complete Exam guidelines and assessment process.]
+
+## Written Part
+
+* Your work must be submitted before your scheduled session, or handed in at the start of the session.
+* Your scheduled session will not proceed if your written work has not been submitted or is incomplete.
+
+## Oral Part
+
+* You must sign-up for a 15-minute time slot on exam days at least 24 hours in advance.
+* If you had discussed an AES accommodation, you may schedule two consecutive sessions.
+* You must show up to your scheduled oral part of the exam in-person and on time.
+* A no-show or being late results in an automatic “M” (missed exam).
+
+## Submission
+
+* Submit your work in Moodle before your scheduled session.
+* If necessary, you may hand in a physical copy at the start of the session.
+
+## Collaboration and Academic Integrity Policy
+
+* You may collaborate with your peers, but the work you submit must reflect your own.
+* You may use all resources available to you, that includes your notes, books, and online resources.
+* Be prepared to defend all aspects of your work.
+
+## Extra Credit Opportunity
+
+* Optional problems will count as an extra credit added to your homework total.
+
+\vfill
+
+\newpage
+
+# X. Population Growth in a City
+
+**Description:**
+
+The city's population (scaled in 10 thousand) is represented by the function $\displaystyle P(t)$, where $\displaystyle t \ge 0$ is the time in years. The model for this city's population growth uses the following assumptions:
+
+* The birth rate is $\displaystyle \frac{1}{10}$. That is 1 thousand people per year.
+* The immigration/emigration rate is $\displaystyle -\infty < \beta < \infty$.
+* The carrying capacity is $\displaystyle 100$, that is 1 million people that the city can sustain.
+* The city's initial population is $P_0$.
+
+The population change over time is governed by the following ODE: $$P' = \frac{1}{10}P(100-P) + \beta.$$
+
+**Written Part:**
+
+1. Classify the given ODE in terms of order, linearity, autonomy, and homogeneity as you change $\beta$.
+2. Show that the *equilibrium solutions* are 
+$$P_1 = 50 - \sqrt{10}\sqrt{250 + \beta} \hspace{10px} \text{ and } \hspace{10px} P_2 = 50 + \sqrt{10}\sqrt{250 + \beta}.$$
+3. Draw complete and well-represented *phase diagrams* for cases $\displaystyle \beta < -250$, $\displaystyle \beta = -250$, and $\displaystyle \beta > -250$.
+4. Draw a complete and well-represented *slope field* for the two-equilibrium case. Then, draw at least four solution curves on the slope field.
+5. Assume real numbered $\displaystyle P_1 \ne P_2$. Use the *separation of variables* method to show that the *general solution* is $$P(t) = \frac{- A P_2 e^{(P_1 - P_2)t} + P_1}{1 - A e^{(P_1 - P_2)t}},$$ where $\displaystyle A$ is the integration constant.
+6. Using the initial condition $\displaystyle P(0) = P_0$, show that the integration constant $\displaystyle A$ for the *specific solution* is $$A = \frac{P_0 - P_1}{P_0 - P_2}.$$
+
+**Oral Part:**
+
+7. Describe the meaning of $\displaystyle \frac{1}{10}P$, $\displaystyle (100-P)$, and $\displaystyle \beta$ in context of the problem description.
+8. Explain the key steps of the method of separation of variables.
+9. For which values of initial conditions $\displaystyle P_0$ does the solution reach a zero population, and for which values does it not? Consider all three cases $\displaystyle \beta < -250$, $\displaystyle \beta = -250$, and $\displaystyle \beta > -250$.
+
+**Optional:**
+
+10. Use Euler's method with step size of $0.10$ in $100$ steps to approximate the specific solution of the ODE, then compare your approximations to the exact specific solution.
+
+\newpage
+
+# Y. Salt Solution in a Fluid Tank
+
+**Description:**
+
+The mass of salt in a tank is represented as a function $\displaystyle C(t)$, where $\displaystyle t \ge 0$ is in hours. The model for the salt amount uses the following assumptions:
+
+* The tank initially contains $\displaystyle C_0$ kilograms of salt dissolved in $\displaystyle 1000$ liters of water.
+* Water that contains $\displaystyle \frac{1}{2}$ kilogram of salt per liter is poured at the rate of $\displaystyle 10$ liters per hour.
+* The volume changes in time at a rate of $\displaystyle -10 < M < 10$ liters per hour.
+
+The change of the salt amount in the solution can be described by the following ODE: $$C' = 5 - \frac{(10-M)}{1000 + Mt}C.$$
+
+**Written Part:**
+
+1. Classify the given ODE in terms of order, linearity, autonomy, and homogeneity as you change $\displaystyle M$.
+2. Show that the *nullcline* is $$C(t) =  \frac{5000}{10-M} + \frac{5M}{10-M} t.$$
+3. Draw complete and well-represented *slope fields* for cases $\displaystyle -10 < M < 0$, $\displaystyle M = 0$ and $\displaystyle 0 < M < 10$. Then, draw at least four solution curves on each slope field.
+4. Draw a complete and well-represented *phase diagram* for the autonomous case.
+5. Use the *integrating factors* method to show that the *general solution* is $$C(t) = 500 + \frac{M}{2}t + A\left(1000+Mt\right)^{\frac{M-10}{M}}$$ where $A$ is the integration constant.
+6. Using the initial condition $C(0) = C_0$, show that the integration constant $\displaystyle A$ for the *specific solution* is $$A = \frac{C_0 - 500}{1000^{\frac{M-10}{M}}}.$$
+
+**Oral Part:**
+
+7. Describe the meaning of ODE terms $\displaystyle 5$ and $\displaystyle - \frac{(10-M)}{1000 + Mt}C$ in context of the problem description.
+8. Explain the key steps of the method of integrating factors.
+9. For which values of initial conditions $\displaystyle C_0$ does the solution attain a critical point (minimum/maximum), and for which values of $\displaystyle C_0$ does it not? Consider all three cases $\displaystyle -10 < M < 0$, $\displaystyle M = 0$ and $\displaystyle 0 < M < 10$.
+
+**Optional:**
+
+10. Use Euler's method with step size of $0.10$ in $100$ steps to approximate the specific solution of the ODE, then compare your approximations to the exact specific solution.

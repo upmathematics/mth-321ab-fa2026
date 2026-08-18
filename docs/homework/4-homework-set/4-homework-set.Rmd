@@ -1,0 +1,347 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Homework Set 4} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+  \usepackage{enumitem}
+  \usepackage{tasks}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../apa.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Homework is graded primarily on correctness and completion.
+
+* Write your solutions on a separate sheet of paper.
+* Include all key steps and explanations that justify your answers, unless it says otherwise.
+* If you print this homework set, you may write directly on the page where appropriate.
+* Attach all supporting files (e.g. \texttt{.py} or \texttt{.ipynb} files) when needed.
+
+\noindent\rule{\textwidth}{1pt}
+
+## Homework Set 4
+
+### 1.
+
+Let $x$ and $y$ be the dependent variables with $t$ as the independent variable. For each system use the given information to:
+
+  (i) determine the general and specific solution in vector form, 
+  (ii) identify the correct direction field, shown below, by matching the eigenvectors,
+  (iii) draw the specific solution on the direction field, and 
+  (iv) use a graphing technology to plot the specific solution with respect to the $t$ axis.
+  
+Then, describe the similarities and differences between how solution behavior appears on the phase plane and how it appears when graphed as a function of time.
+
+\begin{tasks}
+  \task $\displaystyle \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 3 & 4 \\ -1 & 7 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}, \hspace{10px} \vec{y}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}; \hspace{10px} \lambda_1 = 5, \hspace{10px} \vec{v_1} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$
+  \vspace{10px}
+  \task $\displaystyle \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 1 & 2 \\ -4 & 5 \end{bmatrix} \begin{bmatrix} x' \\ y' \end{bmatrix}, \hspace{10px} \vec{y}(0) = \begin{bmatrix} -1 \\ 1 \end{bmatrix}; \hspace{10px} \begin{aligned} \lambda_1 = & 3+2i \\ \lambda_2 = & 3-2i, \end{aligned} \hspace{10px} \vec{v_1} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} + i \begin{bmatrix} -1 \\ 0 \end{bmatrix}, \hspace{10px} \vec{v_2} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} + i \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
+  \vspace{10px}
+\end{tasks}
+
+\begin{minipage}[t!]{0.49\textwidth}
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- 1*x + 2*y
+    dy <- -4*x + 5*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="")  +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red") + 
+  ggtitle("A")
+```
+\end{minipage}
+\begin{minipage}[t!]{0.49\textwidth}
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- 3*x + 4*y
+    dy <- -1*x + 7*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="")  +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red") + 
+  ggtitle("B")
+```
+\end{minipage}
+
+### 2.
+
+Consider the following systems of ODEs with their corresponding direction fields:
+
+\begin{minipage}[t!]{0.49\textwidth}
+\begin{center}\underline{System A}\end{center}
+\vspace{10px}
+$$
+\begin{aligned}
+x' & = 2x + y \\
+y' & = x + 2y
+\end{aligned}
+$$
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- 2*x + y
+    dy <- x + 2*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=17,
+              scale=0.20,rad=0.225,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="")  +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+\end{minipage}
+\begin{minipage}[t!]{0.49\textwidth}
+\begin{center}\underline{System B}\end{center}
+\vspace{10px}
+$$
+\begin{aligned}
+x' & = 2x - \frac{1}{3} xy \\
+y' & = 3y - \frac{1}{2} xy
+\end{aligned}
+$$
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- 2*x - (1/3)*x*y
+    dy <- 3*y - (1/2)*x*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-3,9),ylim=c(-3,9),res=17,
+              scale=0.50,rad=0.1,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="")  +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red") + 
+  geom_point(data=tibble(x=6,y=6),aes(x=x,y=y),color="red")
+```
+\end{minipage}
+
+\begin{tasks}
+  \task Determine the Jacobian matrices $J_A(x,y)$ and $J_B(x,y)$ for systems $A$ and $B$ respectively. Compare the matrices and identify which system is linear and non-linear. Then, explain the key indicator of the system's linearity based on the matrices.
+  \task For each system, determine the equilibriums and evaluate their Jacobian matrix at those points. Then, explain the purpose of the Jacobian matrix in the process of linearization.
+  \task For each system, determine the eigenvalues of each Jacobian matrix. Then, explain what the eigenvalues describe regarding the behavior of solutions around each equilibrium.
+  \task For the linear system only:
+    \begin{itemize}
+      \item[i.] Determine the "straight-line" solutions using the isocline $\displaystyle \frac{y'}{x'} = \frac{y}{x}$ and compare these solutions to the eigenvalues for the linear system computed in Part (d). Describe your observations.
+      \item[ii.] Draw these "straight-line" solutions on the system's corresponding direction field. Describe the behavior of solutions around the equilibrium.
+      \item[iii.] Are the properties of the eigenvalues consistent with your observations at the equilibrium?
+    \end{itemize}
+  \task For the non-linear system only:
+    \begin{itemize}
+      \item[i.] Explain why the linearization process is necessary to determine the behavior of solutions around an equilibrium.
+      \item[ii.] Draw at least four specific solution curves on the system's corresponding direction field. Describe the behavior of solutions around each equilibrium.
+      \item[iii.] Are the properties of the eigenvalues consistent with your observations at each equilibrium?
+    \end{itemize}
+\end{tasks}
+
+\newpage
+
+### 3.
+
+Let $x$ and $y$ be the dependent variables with $t$ as the independent variable. For each of the following homogeneous linear system of 1st-order ODEs: 
+  
+  (i) determine the general solution, 
+  (ii) on its corresponding direction field, identify the "straight-line" solutions if any, 
+  (iii) on the same direction field, draw at least four specific solution curves, and 
+  (iv) identify the equilibrium class (including the relevant subclass) and its stability.
+
+\begin{tasks}(2)
+  \task
+    $\displaystyle \begin{aligned} x' = & -2x-1y \\ y' = & -2y \end{aligned}$
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- -2*x - 1*y
+    dy <- 0*x - 2*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="")  +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+  \task 
+    $\displaystyle \begin{aligned} x' = & -4x-2y \\ y' = & -x-3y \end{aligned}$
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- -4*x - 2*y
+    dy <- -1*x - 3*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="")  +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+  \task
+    $\displaystyle \begin{aligned} x' = & 4y \\ y' = & x \end{aligned}$
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- 0*x + 4*y
+    dy <- 1*x + 0*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="")  +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+  \task 
+    $\displaystyle \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 4 & -2 \\ -2 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}$
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- 4*x - 2*y
+    dy <- -2*x + 1*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=14,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="") +
+  geom_abline(slope=2,intercept=0,color="red",size=1)
+```
+  \task
+    $\displaystyle \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} -1 & -1 \\ 2 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}$
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- -1*x - 1*y
+    dy <- 2*x + 1*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="")  +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+  \task
+    $\displaystyle \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} -1 & 2 \\ -2 & -1 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}$
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- -1*x + 2*y
+    dy <- -2*x - 1*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="") +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+  \task 
+    $\displaystyle \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 2 & -3 \\ 3 & 2 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}$
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- 2*x - 3*y
+    dy <- 3*x + 2*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="") +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+  \task 
+    $\displaystyle \begin{aligned} x' = & -2x \\ y' = & -2y \end{aligned}$
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width="100%", fig.width=3,fig.height=3}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- -2*x + 0*y
+    dy <- 0*x + -2*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.25,rad=0.25,unit=TRUE,
+              col="black",xlab="x",ylab="y",title="") +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+\end{tasks}
+
+\newpage
+
+### 4. Challenge Problem
+
+Consider the following homogeneous linear system of 1st-order ODEs.
+$$
+\begin{aligned}
+  x' = & - \alpha x + \beta y\\
+  y' = & \beta x -\alpha y
+\end{aligned}
+$$
+
+where $\alpha > 0$ and $\beta > 0$.
+
+\begin{tasks}
+  \task Determine the equation for the $x$-nullcline of the system of ODEs with terms of $\alpha$ and $\beta$.
+  \task Determine the equation for the $y$-nullcline of the system of ODEs with terms of $\alpha$ and $\beta$.
+  \task Determine the "straight-line" solutions (eigenvalues and eigenvectors) with terms of $\alpha$ and $\beta$ in two ways:
+    \begin{itemize}
+      \item[i.] Using the isocline $\displaystyle \frac{y'}{x'} = \frac{y}{x}$.
+      \item[ii.] Using the matrix-vector form $\displaystyle \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} -\alpha & \beta \\ \beta & -\alpha \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}$.
+    \end{itemize}
+    Then, compare the results obtained by each method. Discuss any similarities or differences.
+  \task Create complete and well represented phase portraits by hand with at least four specific solution curves for cases when $\alpha = \beta$, $\alpha < \beta$, and $\alpha > \beta$.
+  \task Describe the behavior of solutions around the equilibrium for cases when $\alpha = \beta$, $\alpha < \beta$, and $\alpha > \beta$.
+\end{tasks}

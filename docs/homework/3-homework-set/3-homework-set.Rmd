@@ -1,0 +1,128 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Homework Set 3} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+  \usepackage{enumitem}
+  \usepackage{tasks}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../apa.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Instructions:** Homework is graded primarily on correctness and completion.
+
+* Write your solutions on separate sheets of paper with your name written on each problem.
+* Include all key steps and explanations that justify your answers, unless it says otherwise.
+* Submit your written work as a `.pdf` file.
+* Attach all supporting files as a `.zip` file if applicable.
+
+\noindent\rule{\textwidth}{1pt}
+
+## Homework Set 3
+
+### 1. 
+
+For each linear homogeneous 2nd-order ODE with constant coefficients: 
+
+  (i) find the characteristic equation, 
+  (ii) solve for the roots of the characteristic equation, and 
+  (iii) determine the general and specific solution of the ODE.
+
+\begin{tasks}(2)
+  \task $\displaystyle y'' - 2y' - 2y = 0; \quad y(0) = 1, \quad y'(0) = 1$
+  \task $\displaystyle y'' = 6y' - 9y; \quad y(0) = 1, \quad y'(0) = 0$
+  \task $\displaystyle y'' + y' + y = 0; \quad y(0) = 0, \quad y'(0) = 1$
+  \task $\displaystyle y'' = -2y; \quad y(0) = 1, \quad y'(0) = 1$
+\end{tasks}
+
+### 2. 
+
+For each linear non-homogeneous 2nd-order ODE with constant coefficients:
+
+  (i) determine the homogeneous solution $y_h$,
+  (ii) find the particular solution $y_p$ using either Undetermined Coefficients or Variation of Parameters, and
+  (iii) write the general solution $y = y_h + y_p$ and determine the specific solution.
+
+Make sure to specify what method you used to find the particular solution.
+
+\begin{tasks}(2)
+  \task $\displaystyle y'' - 2y' + y = e^{t}; \quad y(0) = 1, \quad y'(0) = 0$
+  \task $\displaystyle y'' + y = \cos{(t)}; \quad y(0) = 0, \quad y'(0) = 1$
+  \task $\displaystyle y'' - 2y' + 2y = 2; \quad y(0) = 0, \quad y'(0) = 1$
+  \task $\displaystyle y'' + y' - 2y = e^{-2t}; \quad y(0) = 1, \quad y'(0) = 0$
+\end{tasks}
+
+### 3. 
+
+Consider the linear 2nd-order ODE with constant coefficients:
+
+$$y''- y' = f(t).$$
+
+Use either Undetermined Coefficients or Variation of Parameters to find the particular solution for each case of $f(t)$. Make sure to specify what method you used to find the particular solution.
+
+\begin{tasks}(4)
+  \task $\displaystyle f(t) = 0$
+  \task $\displaystyle f(t) = 1$
+  \task $\displaystyle f(t) = \frac{1}{1 + e^{-t}}$
+  \task $\displaystyle f(t) = e^{t}\left( \sin{(t)} + 1 \right)$
+\end{tasks}
+
+\newpage
+
+### 4. 
+
+Resonance occurs when a system is forced at its natural frequency, leading to a build-up of the amplitude of oscillation and energy. In other words, it occurs when the frequency of the non-homogeneous term matches the frequency of the homogeneous solution.
+
+To illustrate resonance in its simplest form, consider the following linear non-homogeneous 2nd-order ODE with constant coefficients: $$y'' + 9 y = 3\sin{(\omega t)}; \quad y(0) = 1, \quad y'(0) = 0$$ where $\omega$ is a real number.
+
+\begin{tasks}
+  \task Determine the homogeneous solution.
+  \task For each value of $\omega$, find the particular solution using either Undetermined Coefficients or Variation of Parameters. Make sure to specify what method you used to find the particular solution.
+    \begin{itemize}
+      \item[i.] $\displaystyle \omega = 1$
+      \item[ii.] $\displaystyle \omega = 2$
+      \item[iii.] $\displaystyle \omega = 3$
+    \end{itemize}
+  \task Write the general solution and determine the specific solution for each value of $\omega$ in Part (b).
+  \task Use a graphing technology to plot the specific solutions determined in Part (c).
+  \task Describe your observations of the behavior of solutions as $\omega$ approaches the frequency of the homogeneous solution.
+\end{tasks}
+
+### 5. Challenge Problem
+
+Consider the following linear non-homogeneous 2nd-order ODE with constant coefficients: $$y'' + \alpha y' + \omega_0^2 y = \beta \cos(\omega t); \quad y(0) = 1, \quad y'(0) = 0$$ where $\alpha$, $\omega_0$ and $\omega$ are real numbers.
+
+\begin{tasks}
+  \task Let $\alpha \ne 0$. For each case below, determine the homogeneous solution.
+    \begin{itemize}
+      \item[i.] Real roots, if $\displaystyle \alpha > 2\omega_0$.
+      \item[ii.] Repeated roots, if $\displaystyle \alpha = 2\omega_0$.
+      \item[iii.] Complex roots, if $\displaystyle \alpha < 2\omega_0$.
+    \end{itemize}
+  \task Find the particular solution in two ways:
+    \begin{itemize}
+      \item[i.] Using the method of Undetermined Coefficients, and
+      \item[ii.] Using the method of Variation of Parameters.
+    \end{itemize}
+    Then, compare the particular solutions obtained by each method.
+  \task Write the general solution for each case in Part (a). Then, solve for the specific solution.
+  \task Let $\alpha = 0$. Use your results in Part (c) to determine the general and specific solution for this case.
+  \task Given the specific solution determined in Part (d) for the case when $\alpha = 0$, show what happens to the behavior of the solution as $\omega$ approaches $\omega_0$.
+\end{tasks}

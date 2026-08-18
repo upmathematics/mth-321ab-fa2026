@@ -1,0 +1,77 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Exam Assessment} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exam Assessment
+
+|  |  |  |
+|:---:|:---:|:---:|
+| **Name** | **Date** | **Exam** |
+| $\hspace{300px}$ | $\hspace{100px}$ | $\hspace{100px}$ |
+| $\hspace{300px}$ | $\hspace{100px}$ | $\hspace{100px}$ |
+| $\hspace{300px}$ | $\hspace{100px}$ | $\hspace{100px}$ |
+
+**Written Part:**
+\vspace{-10px}
+
+|  |  |  |  |  |  |
+|:---------:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Problems | (1) | (2) | (3) | (4) | (5) | (6) |
+
+|  |  |
+|------:|:------------------|
+| **Methodology** \newline M \| NMI \| NI \| A \| E \| O | The appropriate method should be applied correctly and consistently across similar problems with shown understanding of the underlying principles. |
+| **Reasoning** \newline M \| NMI \| NI \| A \| E \| O | The method should be explained in a clear and logical way with each key step justified and explained. |
+| **Writing** \newline M \| NMI \| NI \| A \| E \| O | The solution process should be written in a clear and concise way including key steps with appropriate mathematical notations along with complete and well represented graphs/diagrams. |
+
+**Oral Part:**
+\vspace{-10px}
+
+|  |  |  |  |
+|:------:|:------:|:------:|
+| (7) | (8) | (9) |
+
+|  |  |
+|------:|:------------------|
+| **Knowledge** \newline M \| NMI \| NI \| A \| E \| O | The mathematical definitions and procedures should be recalled accurately and applied appropriately and consistently. |
+| **Communication** \newline M \| NMI \| NI \| A \| E \| O | The underlying concepts should be explained clearly, concisely, and consistently using appropriate mathematical language. |
+| **Problem-solving** \newline M \| NMI \| NI \| A \| E \| O | The given problem should be critically identified, understood, and solved using the prescribed or unprescribed methods or strategies. |
+
+**Optional:**
+\vspace{-10px}
+
+|  |
+|:------:|
+| (10) |
+
+**Overall (Main):**
+\vspace{-10px}
+
+|  |  |  |  |  |  |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| M | NMI | NI | A | E | O |
+
+\newpage
+
+**Other Comments:**
+\vfill
+
+

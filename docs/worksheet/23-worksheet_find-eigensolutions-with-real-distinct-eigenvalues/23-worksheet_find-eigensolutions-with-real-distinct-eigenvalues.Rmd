@@ -1,0 +1,132 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 23} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.25in,right=0.25in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Find Eigensolutions with Real Distinct Eigenvalues
+
+### 1. The General Solution with Real Distinct Eigenvalues
+
+Consider the homogeneous linear system of 1st-order ODEs: $\displaystyle \begin{aligned} x' & = -2x + y  \\ y' & = x -2y \end{aligned}$.
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] The general solution to the given system is 
+      $$
+      \begin{aligned}
+      x & = -c_1e^{-3t} + c_2 e^{-t} \\
+      y & = c_1e^{-3t} + c_2 e^{-t}
+      \end{aligned}.
+      $$
+      Write this solution into vector form.
+      \vfill
+    \item[b.] From the vector form of the general solution in Part (a), identify the eigenvalues and eigenvectors.
+    \vfill
+    \item[c.] Explain what the eigenvectors describe when viewed on a phase plane.
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[d.] Use the properties of the eigenvalues to determine the stability of the equilibrium.
+    \vfill
+    \item[c.] Draw the eigenvectors and at least four specific solution curves on the vector field Then, describe the solution behaviors around the equilibrium.
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=4,fig.height=4}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- -2*x + y
+    dy <- x - 2*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=15,
+              scale=0.20,rad=0.28,unit=TRUE,axis=FALSE,
+              col="black",xlab=TeX('$x$'),ylab=TeX('$y$'),title='') +
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+  \end{itemize}
+\end{minipage}
+
+\newpage
+
+### 2. Finding Eigenvalues and Eigenvectors
+
+Consider the same system of ODEs from Problem (1) in matrix-vector form: $\displaystyle \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} -2 & 1 \\ 1 & -2 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}$.
+
+\begin{minipage}[t][0.32\textheight]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] To solve the system, we need to find any eigenvalue $\lambda$ with corresponding eigenvector $\vec{v} \ne \vec{0}$ so that 
+      $$
+      \begin{bmatrix} 0 \\ 0 \end{bmatrix} = \left(\begin{bmatrix} -2 & 1 \\ 1 & -2 \end{bmatrix} - \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix}\right) \vec{v}
+      $$
+      Explain why this is related to finding the straight-line solutions.
+      \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][0.32\textheight]{0.49\textwidth}
+  \begin{itemize}
+    \item[b.] The characteristic equation can be determined using the formula
+      $$
+      \text{det} \left(\begin{bmatrix} -2 & 1 \\ 1 & -2 \end{bmatrix} - \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix}\right) = 0.
+      $$
+      Use the characteristic equation to show that the eigenvalues are $\lambda_1 = -3$ and $\lambda_2 = -1$.
+      \vfill
+  \end{itemize}
+\end{minipage}
+
+c. Given the first eigenvalue $\lambda_1 = -3$, we need to find its corresponding eigenvector $\vec{v}_1$. The following tasks shows you how to determine $\vec{v}_1$ directly from the coefficient matrix.
+
+| Task | Show work here |
+|-----------|---------|
+| Write the equation into an augmented matrix: $$\begin{aligned} \begin{matrix} \text{row}_1 \rightarrow \\ \text{row}_2 \rightarrow \end{matrix} & \begin{bmatrix} -2-\lambda_1 & 1 & 0 \\ 1 & -2-\lambda_1 & 0 \end{bmatrix} \end{aligned}$$ |  |
+|-----------|---------|
+| Row reduce the augmented matrix into the form $$\begin{aligned} \begin{matrix} \text{row}_1 \rightarrow \\ \text{row}_2 \rightarrow \end{matrix} & \begin{bmatrix} a & b & 0 \\ 0 & 0 & 0 \end{bmatrix} \end{aligned}$$ where $a$ and $b$ are values left over. |  |
+|-----------|---------|
+| The values in $\text{row}_1$ correspond to the coefficients of the line $ax + by = 0$. This is one of the straight-line solutions. Then, find a vector that is parallel to this line. |  |
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[d.] Given the second eigenvalue $\lambda_2 = -1$, do the same tasks shown in Part (c) to determine the corresponding eigenvector $\vec{v}_2$.
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[e.] Write the general solution. Then, solve for the specific solution using initial conditions $(1,0)$.
+    \vfill
+  \end{itemize}
+\end{minipage}

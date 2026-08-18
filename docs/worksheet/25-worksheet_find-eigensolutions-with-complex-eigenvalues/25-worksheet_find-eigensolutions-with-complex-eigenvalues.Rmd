@@ -1,0 +1,113 @@
+---
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[LO,L]{\textbf{MTH-321 AB} | Spring 2026}
+  \fancyhead[RO,R]{\textbf{Worksheet 25} | Pg. \thepage}
+  \fancyfoot[CO,C]{}
+  \usepackage{float}
+  \usepackage{multirow}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+link-citations: yes
+bibliography: ../../../references.bib
+csl: ../../../mbe.csl
+geometry: "left=0.25in,right=0.25in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source(file.path("../../R/functions-mth321.R"))
+```
+
+**Name:**
+
+**Collaborators:**
+
+\noindent\rule{\textwidth}{1pt}
+**Instructions:** Worksheets are graded mostly on completion and partially on correctness. Please write complete solutions showing explanations and key steps to the following problems, unless it says otherwise.
+\noindent\rule{\textwidth}{1pt}
+
+## Find Eigensolutions with Complex Eigenvalues
+
+### 1. Imaginary Eigenvalues
+
+Consider the *linear homogeneous system of 1st-order ODEs with constant coefficients*: $\displaystyle \begin{aligned} x' & = y \\ y' & = -2x \end{aligned}.$
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] Show that the eigenvalues are purely imaginary $$\lambda_1 = i \sqrt{2} \quad \text{and} \quad \lambda_2 = -i \sqrt{2}.$$
+    \vfill
+    \item[b.] Show that the corresponding eigenvectors are $$\vec{v}_1 = \begin{bmatrix} -\frac{1}{\sqrt{2}} i \\ 1 \end{bmatrix} \quad \text{and} \quad \vec{v}_2 = \begin{bmatrix} \frac{1}{\sqrt{2}} i \\ 1\end{bmatrix}.$$ Then, write these eigenvectors as a linear combination of its real and imaginary parts.
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[c.] Below is the vector field for the given system. Draw the real and imaginary parts of the eigenvectors on the phase plane.
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=4,fig.height=4}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- y
+    dy <- - 2*x
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=13,
+              scale=0.20,rad=0.30,unit=TRUE,axis=FALSE,
+              col="black",xlab=TeX('$x$'),ylab=TeX('$y$'),title='') + 
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+    \item[d.] Draw a specific solution curve on the direction field with initial condition $(x,y)=(1,0)$. Then, discuss how the parts of the complex eigenvectors help determine the orientation of the ellipse formed by the solution.
+    \vfill
+  \end{itemize}
+\end{minipage}
+
+\newpage
+
+### 2. Complex Eigenvalues
+
+Consider the *linear homogeneous system of 1st-order ODEs with constant coefficients*: $\displaystyle \begin{aligned} x' & = y \\ y' & = -2x-2y \end{aligned}.$
+
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[a.] Show that the eigenvalues are complex conjugates $$\lambda_1 = -1 + i \quad \text{and} \quad \lambda_2 = -1 -i.$$
+    \vfill
+    \item[b.] Show that the corresponding eigenvectors are $$\vec{v}_1 = \begin{bmatrix} -1-i \\ 2 \end{bmatrix} \quad \text{and} \quad \vec{v}_2 = \begin{bmatrix} -1+i \\ 2 \end{bmatrix}.$$ Then, write these eigenvectors as a linear combination of its real and imaginary components.
+    \vfill
+    \item[c.] Determine the general solution. Here, you can use $\lambda_1$ and $\vec{v}_1$ to form a solution using Euler's formula. Then, use the real and imaginary parts of this solution as two linearly independent solutions to form a general solution.
+    \vfill
+  \end{itemize}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t][\textheight-\pagetotal]{0.49\textwidth}
+  \begin{itemize}
+    \item[d.] Below is the vector field for the given system. Draw the real and imaginary parts of the eigenvectors on the phase plane.
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="100%", fig.width=4,fig.height=4}
+ode <- function(x,y,parameters){
+  with(as.list(c(parameters)),{
+    dx <- y
+    dy <- -2*x - 2*y
+    return(list(dx,dy))
+  })
+}
+
+PhasePortrait(ode,params=c(),
+              xlim=c(-2,2),ylim=c(-2,2),res=13,
+              scale=0.20,rad=0.30,unit=TRUE,axis=FALSE,
+              col="black",xlab=TeX('$x$'),ylab=TeX('$y$'),title='') + 
+  geom_point(data=tibble(x=0,y=0),aes(x=x,y=y),color="red")
+```
+  \item[e.] Draw a specific solution curve on the direction field with initial condition $(x,y)=(1,0)$. Then, discuss how the eigenvectors help determine the orientation of the spiral formed by the solution.
+  \vfill
+  \item[f.] Determine the specific solution given the initial condition $(x,y)=(1,0)$.
+  \vfill
+  \end{itemize}
+\end{minipage}
