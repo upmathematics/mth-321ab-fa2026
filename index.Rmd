@@ -21,24 +21,6 @@ nocite: '@*'
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-:::: {style="display: flex;"}
-:::: {.column width=39%}
-```{r systems-animation-1, echo=FALSE, fig.align='center', out.width = '100%', fig.show='hold', fig.cap='Pendulum'}
-knitr::include_graphics(c("figures/pendulum.gif"))
-```
-:::
-:::: {.column width=59%}
-```{r systems-animation-2, echo=FALSE, fig.align='center', out.width = '100%', fig.show='hold', fig.cap='Horizontal Spring-Mass'}
-knitr::include_graphics(c("figures/horizontal-spring-mass.gif"))
-```
-```{r systems-animation-3, echo=FALSE, fig.align='center', out.width = '100%', fig.show='hold', fig.cap='Bouncing Ball'}
-knitr::include_graphics(c("figures/bouncing-ball.gif"))
-```
-::::
-::::
-
-An ordinary differential equation is a core mathematical framework for describing systems that change over time. They transform physical laws into predictive models that show how things evolve.
-
 # Syllabus
 
 ## **About the Class**
