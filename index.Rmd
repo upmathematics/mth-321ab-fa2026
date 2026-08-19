@@ -476,7 +476,7 @@ You are "required" to read the materials, and are strongly encouraged to activel
 
 | **Week** | **Day** | **Topics** |
 |:--:|:--:|:---------------|
-| **1** | Tu 8/25 | $\rightarrow$ Orientation<br>$\rightarrow$ Modeling Physical Systems<br>$\rightarrow$ Classification of Equations<br>$\rightarrow$ Principles of Solutions |
+| **1** | Tu 8/25 | $\rightarrow$ Orientation<br>$\rightarrow$ Algebra Review<br>$\rightarrow$ Calculus Review<br>$\rightarrow$ Using Technology for Algebra and Calculus<br>$\rightarrow$ Modeling Physical Systems<br>$\rightarrow$ Classification of Equations<br>$\rightarrow$ Principles of Solutions |
 |  | Th 8/27 | $\rightarrow$ 1st-Order ODEs<br>$\rightarrow$ Equilibriums of 1st-Order ODEs<br>$\rightarrow$ 1st-Order Existence and Uniqueness<br>$\rightarrow$ Phase Diagrams<br>$\rightarrow$ Slope Fields |
 | **2** | Tu 9/1 | $\rightarrow$ Analyzing Equilibriums of 1st-Order ODEs<br>$\rightarrow$ Bifurcations in One Dimension |
 |  | Th 9/3 | $\rightarrow$ Applications of 1st-Order ODEs<br>$\rightarrow$ Euler's Method |
@@ -519,6 +519,9 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (Ch
 | **Topic** | **Read** |
 |:---------|:---|
 | Orientation | Syllabus |
+| Algebra Review | - |
+| Calculus Review | - |
+| Using Technology for Algebra and Calculus | - |
 | Modeling Physical Systems | - |
 | Classification of Equations | Ch. 1.1 @trench2013elementary |
 | Principles of Solutions | Ch. 1.2 @trench2013elementary |
