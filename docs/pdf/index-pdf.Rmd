@@ -413,7 +413,7 @@ The misuse of AI to shortcut course learning outcomes will be treated as a viola
 
 ### Course AI Policy
 
-The use of generative AI —such as Copilot, Gemini, or ChatGPT— is allowed in all of its capacity. However, students must use these tools ethically and responsibly. To use generative AI responsibly in this class, students should grasp underlying concepts, acknowledge AI's assistance, protect data privacy, verify information, and uphold academic honor code. AI should be seen as a learning aid, not a replacement for critical thinking.
+The use of generative AI —such as Claude, Copilot, Gemini, or ChatGPT— is allowed in all of its capacity. However, students must use these tools ethically and responsibly. To use generative AI responsibly in this class, students should grasp underlying concepts, acknowledge AI's assistance, protect data privacy, verify information, and uphold academic honor code. AI should be seen as a learning aid, not a replacement for critical thinking.
 
 This AI policy applies only to this course. For other courses, please follow those professors’ AI policies, which may differ from this one.
 
@@ -477,7 +477,7 @@ The University of Portland is committed to fostering a safe and respectful commu
 
 You are "required" to read the materials, and are strongly encouraged to actively participate in class discussions and complete the assignments efficiently to deepen your understanding and succeed in the course.
 
-> All course materials are available in this course's Canvas Modules page at [MTH-321 A\&B - Modules](https://portland.instructure.com/courses/2789/pages/materials){target="_blank"}.
+> * All course materials are available in this course's Canvas Modules page at [MTH-321 A\&B - Modules](https://portland.instructure.com/courses/2789/pages/materials){target="_blank"}.
 
 ## **Topics Schedule**
 
@@ -513,7 +513,7 @@ You are "required" to read the materials, and are strongly encouraged to activel
 |  | T 11/26 | _Thanksgiving Vacation_ |
 | **15** | Tu 12/1 | $\rightarrow$ Series Solutions for Linear ODEs (Optional) |
 |  | Th 12/3 | $\rightarrow$ Solutions for Linear Higher Order ODEs (Optional) |
-| **16** | M 12/7 to Th 12/10 | **Cumulative Exam** (Topics from **Exams 1, 2, \& 3, including Laplace Transforms**) |
+| **16** | M 12/7 to Th 12/10 | **Cumulative Exam** (Topics from **Exams 1, 2, \& 3** including Topics in **Laplace Transforms**) |
 
 <br>
 
@@ -521,7 +521,7 @@ You are "required" to read the materials, and are strongly encouraged to activel
 
 The "Read" column in the table below contains page numbers (Pg.) or chapters (Ch.) on which it refers to a label in the Books \& Online Resources List. For example "Ch. 1.1-1.2 @trench2013elementary" refers to Chapters 1.1 and 1.2 of the textbook titled *Elementary Differential Equations*.
 
-> You can freely access the textbook here [https://digitalcommons.trinity.edu/mono/8/](https://digitalcommons.trinity.edu/mono/8/){target="_blank"}.
+> * You can freely access the textbook here [https://digitalcommons.trinity.edu/mono/8/](https://digitalcommons.trinity.edu/mono/8/){target="_blank"}.
 
 | **Topic** | **Read** |
 |:---------|:---|
