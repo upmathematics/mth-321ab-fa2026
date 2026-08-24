@@ -373,18 +373,20 @@ Here are the rules of make-up exams:
 
 ### Final Exam
 
-The final exam includes the written and oral parts, and it will be cumulative. 
+The final exam is an *unconventionally conventional* written exam, and it will be cumulative. 
 
 Here are the rules for the final exam:
 
-  * The same written and oral part rules apply for the final exam.
+  * The final exam must take place in person at its scheduled time and location.
+  * All notes, books, and technology are not allowed during the exam.
   * Retakes and make-up for previous exams are not allowed during final exam days.
-  * You need to have at least a mark of "NI" to maintain your current standing in this course.
+  * You need to have at least a mark of "A" to maintain your current standing in this course.
   * Retakes and make-up are not possible for the final exam.
 
-> The final exam days are:
+> The final exam schedule and location are:
 >
->   * Monday 12/7 to Thursday 12/10
+>   * **Section A:** December 10, Thursday, 1:30 PM - 3:30 PM, Franz Hall 026
+>   * **Section B:** December 8, Tuesday, 10:30 AM - 12:30 PM, Dundon-Berchtold Hall 232
 
 <br>
 
@@ -482,7 +484,7 @@ You are "required" to read the materials, and are strongly encouraged to activel
 
 | **Week** | **Day** | **Topics** |
 |:--:|:--:|:---------------|
-| **1** | Tu 8/25 | $\rightarrow$ Orientation<br>$\rightarrow$ Algebra Review<br>$\rightarrow$ Calculus Review<br>$\rightarrow$ Using Technology for Algebra and Calculus<br>$\rightarrow$ Modeling Physical Systems<br>$\rightarrow$ Classification of Equations<br>$\rightarrow$ Principles of Solutions |
+| **1** | Tu 8/25 | $\rightarrow$ Orientation<br>$\rightarrow$ Algebra Review<br>$\rightarrow$ Calculus Review<br>$\rightarrow$ Using Technology for Algebra and Calculus<br>$\rightarrow$ Classification of Equations<br>$\rightarrow$ Principles of Solutions |
 |  | Th 8/27 | $\rightarrow$ 1st-Order ODEs<br>$\rightarrow$ Equilibriums of 1st-Order ODEs<br>$\rightarrow$ 1st-Order Existence and Uniqueness<br>$\rightarrow$ Phase Diagrams<br>$\rightarrow$ Slope Fields |
 | **2** | Tu 9/1 | $\rightarrow$ Analyzing Equilibriums of 1st-Order ODEs<br>$\rightarrow$ Bifurcations in One Dimension |
 |  | Th 9/3 | $\rightarrow$ Applications of 1st-Order ODEs<br>$\rightarrow$ Euler's Method |
@@ -528,7 +530,6 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (Ch
 | Algebra Review | - |
 | Calculus Review | - |
 | Using Technology for Algebra and Calculus | - |
-| Modeling Physical Systems | - |
 | Classification of Equations | Ch. 1.1 @trench2013elementary |
 | Principles of Solutions | Ch. 1.2 @trench2013elementary |
 | 1st-Order ODEs | Ch. 2.1 @trench2013elementary |
