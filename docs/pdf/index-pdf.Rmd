@@ -380,7 +380,7 @@ Here are the rules of make-up exams:
 
 ### Final Exam
 
-The final exam is an *unconventionally conventional* written exam, and it will be cumulative. 
+The final exam is an *unconventionally conventional* exam, and it will be cumulative. 
 
 Here are the rules for the final exam:
 
