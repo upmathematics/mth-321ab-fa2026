@@ -492,7 +492,7 @@ You are "required" to read the materials, and are strongly encouraged to activel
 | **1** | Tu 8/25 | $\rightarrow$ Orientation<br>$\rightarrow$ Algebra Review<br>$\rightarrow$ Calculus Review<br>$\rightarrow$ Using Technology for Algebra and Calculus<br>$\rightarrow$ Classification of Equations<br>$\rightarrow$ Principles of Solutions |
 |  | Th 8/27 | $\rightarrow$ 1st-Order ODEs<br>$\rightarrow$ Equilibriums of 1st-Order ODEs<br>$\rightarrow$ 1st-Order Existence and Uniqueness<br>$\rightarrow$ Phase Diagrams<br>$\rightarrow$ Slope Fields |
 | **2** | Tu 9/1 | $\rightarrow$ Analyzing Equilibriums of 1st-Order ODEs<br>$\rightarrow$ Bifurcations in One Dimension |
-|  | Th 9/3 | $\rightarrow$ Applications of 1st-Order ODEs<br>$\rightarrow$ Euler's Method |
+|  | Th 9/3 | $\rightarrow$ Applications of 1st-Order ODEs<br>$\rightarrow$ Euler's Method (Optional) |
 | **3** | Tu 9/8 | $\rightarrow$ Separation of Variables for Linear 1st-Order ODEs<br>$\rightarrow$ Separation of Variables for Non-Linear 1st-Order ODEs |
 |  | Th 9/10 | $\rightarrow$ Exact Forms of 1st-Order ODEs<br>$\rightarrow$ Integrating Factors for Linear 1st-Order ODEs |
 | **4** | Tu 9/15 | $\rightarrow$ 2nd-Order ODEs<br>$\rightarrow$ Equilibriums of 2nd-Order ODEs<br>$\rightarrow$ 2nd-Order Existence and Uniqueness |
@@ -507,7 +507,7 @@ You are "required" to read the materials, and are strongly encouraged to activel
 |  | Th 10/15 | _Fall Vacation_ |
 | **9** | Tu 10/20 | _Review_ |
 |  | M 10/19 to F 10/23 | **Exam 2** on **2nd-Order ODEs** (No Class Session on Th 10/22) |
-| **10** | Tu 10/27 | $\rightarrow$ Applications of 2nd-Order ODEs \& Systems of 1st-Order ODEs<br>$\rightarrow$ Runge-Kutta Method |
+| **10** | Tu 10/27 | $\rightarrow$ Applications of 2nd-Order ODEs \& Systems of 1st-Order ODEs<br>$\rightarrow$ Runge-Kutta Method (Optional) |
 |  | Th 10/29 | $\rightarrow$ Eigenvalues and Eigenvectors for Homogeneous Linear 1st-Order Systems<br>$\rightarrow$ Stability Analysis by Linearization |
 | **11** | Tu 11/3 | $\rightarrow$ Distinct Real Eigenvalues for Homogeneous Linear 1st-Order Systems<br>$\rightarrow$ Repeated Real Eigenvalues for Homogeneous Linear 1st-Order Systems<br>$\rightarrow$ Complex Eigenvalues for Homogeneous Linear 1st-Order Systems |
 |  | Th 11/5 | $\rightarrow$ Variation of Parameters for Nonhomogeneous Linear 1st-Order Systems |
@@ -545,7 +545,7 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (Ch
 | Phase Diagrams | - |
 | Bifurcations in One Dimension | - |
 | Applications of 1st-Order ODEs | Ch. 4.1-4.3 @trench2013elementary |
-| Euler's Method | Ch. 3.1 @trench2013elementary |
+| Euler's Method (Optional) | Ch. 3.1 @trench2013elementary |
 | Separation of Variables for Linear 1st-Order ODEs | Ch. 2.2 @trench2013elementary |
 | Separation of Variables for Non-Linear 1st-Order ODEs | Ch. 2.4 @trench2013elementary |
 | Exact Forms of 1st-Order ODEs | Ch. 2.5 @trench2013elementary |
@@ -567,7 +567,7 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (Ch
 | Phase Portraits | - |
 | Bifurcations in Two Dimensions | - |
 | Applications of 2nd-Order ODEs and System of 1st-Order ODEs | Ch. 6.1-6.3 @trench2013elementary |
-| Runge-Kutta Method | Ch. 3.2-3.3 @trench2013elementary |
+| Runge-Kutta Method (Optional) | Ch. 3.2-3.3 @trench2013elementary |
 | Eigenvalues and Eigenvectors for Homogeneous Linear 1st-Order Systems | - |
 | Stability Analysis by Linearization | - |
 | Distinct Real Eigenvalues for Homogeneous Linear 1st-Order Systems | Ch. 10.4 @trench2013elementary |
