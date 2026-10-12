@@ -487,39 +487,7 @@ You are "required" to read the materials, and are strongly encouraged to activel
 
 ## **Topics Schedule**
 
-| **Week** | **Day** | **Topics** |
-|:--:|:--:|:---------------|
-| **1** | Tu 8/25 | $\rightarrow$ Orientation<br>$\rightarrow$ Algebra Review (Optional)<br>$\rightarrow$ Calculus Review (Optional)<br>$\rightarrow$ Using Technology for Algebra and Calculus<br>$\rightarrow$ Classification of Equations<br>$\rightarrow$ Principles of Solutions |
-|  | Th 8/27 | $\rightarrow$ 1st-Order ODEs<br>$\rightarrow$ Equilibriums of 1st-Order ODEs<br>$\rightarrow$ 1st-Order Existence and Uniqueness<br>$\rightarrow$ Phase Diagrams<br>$\rightarrow$ Slope Fields |
-| **2** | Tu 9/1 | $\rightarrow$ Analyzing Equilibriums of 1st-Order ODEs<br>$\rightarrow$ Bifurcations in One Dimension |
-|  | Th 9/3 | $\rightarrow$ Applications of 1st-Order ODEs<br>$\rightarrow$ Euler's Method (Optional) |
-| **3** | Tu 9/8 | $\rightarrow$ Separation of Variables for Linear 1st-Order ODEs<br>$\rightarrow$ Separation of Variables for Non-Linear 1st-Order ODEs |
-|  | Th 9/10 | $\rightarrow$ Exact Forms of 1st-Order ODEs<br>$\rightarrow$ Integrating Factors for Linear 1st-Order ODEs |
-| **4** | Tu 9/15 | $\rightarrow$ 2nd-Order ODEs<br>$\rightarrow$ Equilibriums of 2nd-Order ODEs<br>$\rightarrow$ 2nd-Order Existence and Uniqueness |
-|  | Th 9/17 | $\rightarrow$ Principle of Superposition<br>$\rightarrow$ Characteristic Polynomials for Homogeneous Linear 2nd-Order ODEs<br>$\rightarrow$ Method of Reduction of Order |
-| **5** | Tu 9/22 | _Review_ |
-|  | M 9/21 to F 9/25 | **Exam 1** on **1st-Order ODEs** (No Class Session on Th 9/24) |
-| **6** | Tu 9/29 | $\rightarrow$ Undetermined Coefficients for Nonhomogeneous Linear 2nd-Order ODEs |
-|  | Th 10/1 | $\rightarrow$ Variation of Parameters for Nonhomogeneous Linear 2nd-Order ODEs |
-| **7** | Tu 10/6 | $\rightarrow$ Systems of 1st-Order ODEs<br>$\rightarrow$ Equilibriums of 1st-Order Systems<br>$\rightarrow$ 1st-Order System Existence and Uniqueness<br>$\rightarrow$ Phase Planes<br>$\rightarrow$ Direction Fields |
-|  | Th 10/8 | $\rightarrow$ Analyzing Equilibriums of 1st-Order Systems<br>$\rightarrow$ Phase Portraits<br>$\rightarrow$ Bifurcations in Two Dimensions |
-| **8** | Tu 10/13 | _Fall Vacation_ |
-|  | Th 10/15 | _Fall Vacation_ |
-| **9** | Tu 10/20 | _Review_ |
-|  | M 10/19 to F 10/23 | **Exam 2** on **2nd-Order ODEs** (No Class Session on Th 10/22) |
-| **10** | Tu 10/27 | $\rightarrow$ Applications of 2nd-Order ODEs \& Systems of 1st-Order ODEs<br>$\rightarrow$ Runge-Kutta Method (Optional) |
-|  | Th 10/29 | $\rightarrow$ Eigenvalues and Eigenvectors for Homogeneous Linear 1st-Order Systems<br>$\rightarrow$ Stability Analysis by Linearization |
-| **11** | Tu 11/3 | $\rightarrow$ Distinct Real Eigenvalues for Homogeneous Linear 1st-Order Systems<br>$\rightarrow$ Repeated Real Eigenvalues for Homogeneous Linear 1st-Order Systems<br>$\rightarrow$ Complex Eigenvalues for Homogeneous Linear 1st-Order Systems |
-|  | Th 11/5 | $\rightarrow$ Variation of Parameters for Nonhomogeneous Linear 1st-Order Systems |
-| **12** | Tu 11/10 | $\rightarrow$ Laplace Transforms<br>$\rightarrow$ Inverse Laplace Transforms<br>$\rightarrow$ Convolutions |
-|  | Th 11/12 | $\rightarrow$ Laplace Transforms for Homogeneous Linear ODEs<br>$\rightarrow$ Laplace Transforms for Nonhomogeneous Linear ODEs |
-| **13** | Tu 11/17 | _Review_ |
-|  | M 11/16 to F 11/20 | **Exam 3** on **Systems of 1st-Order ODEs** (No Class Session on Th 11/19) |
-| **14** | Tu 11/24 | $\rightarrow$ Laplace Transforms for Linear 1st-Order Systems |
-|  | T 11/26 | _Thanksgiving Vacation_ |
-| **15** | Tu 12/1 | $\rightarrow$ Series Solutions for Linear ODEs (Optional) |
-|  | Th 12/3 | $\rightarrow$ Solutions for Linear Higher Order ODEs (Optional) |
-| **16** | M 12/7 to Th 12/10 | **Cumulative Exam** (Topics from **Exams 1, 2, \& 3** including Topics in **Laplace Transforms**) |
+*This section is under review for amendments.*
 
 <br>
 
